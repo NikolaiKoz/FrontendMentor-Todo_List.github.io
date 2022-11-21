@@ -1,0 +1,259 @@
+/* <----------  ROOT  ----------> */
+
+:root{
+
+    /* <----------  PRIMARY COLORS  ----------> */
+
+    --bright-blue: hsl(220, 98%, 61%);
+    --check-background: linear-gradient(hsl(192, 100%, 67%), hsl(280, 87%, 65%));
+
+    /* <----------  LIGTH THEME COLORS  ----------> */
+
+    --very-light-gray: hsl(0, 0%, 98%);
+    --very-light-grayish-blue: hsl(236, 33%, 92%);
+    --light-grayish-blue: hsl(233, 11%, 84%);
+    --dark-grayish-blue: hsl(236, 9%, 61%);
+    --very-dark-grayish-blue: hsl(235, 19%, 35%);
+
+    /* <----------  DARK THEME COLORS  ----------> */
+
+    --very-dark-blue-Dark: hsl(235, 21%, 11%);
+    --very-dark-desaturated-blue-Dark: hsl(235, 24%, 19%);
+    --light-grayish-blue-Dark: hsl(234, 39%, 85%);
+    --light-grayish-blue-hover-Dark: hsl(236, 33%, 92%);
+    --dark-grayish-blue-Dark: hsl(234, 11%, 52%);
+    --very-dark-grayish-blue-Dark: hsl(233, 14%, 35%);
+    --very-dark-grayish-blue-Dark: hsl(237, 14%, 26%);
+
+}
+
+/* <----------  BODY  ----------> */
+
+body {
+    background-color: var(--very-light-gray);
+    line-height: 1;
+    font-family: 'Josefin Sans', sans-serif;
+    font-size: 18px;
+}
+
+/* <----------  HEADER  ----------> */
+
+header{
+    position: relative;
+}
+
+.title__container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 2rem 2rem 0 2rem;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+}
+
+.title__container__title {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--very-light-gray);
+    letter-spacing: 10px;
+}
+
+.title__container__themeBotton{
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    outline: none;
+    height: 20px;
+}
+
+.input__container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto;
+    position: absolute;
+    bottom: 50px;
+    left: 0;
+    right: 0;
+    background-color: var(--very-light-gray);
+    width: 90%;
+    height: 2.5em;
+    border-radius: 5px;
+}
+
+.input__container__circle{
+    margin-left: 1rem;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    border: 1px solid var(--light-grayish-blue);
+    cursor: pointer;
+
+}
+
+::-webkit-input-placeholder {
+    font-family: 'Josefin Sans', sans-serif;
+    color: var(--dark-grayish-blue);
+    letter-spacing: 0;
+}
+
+.input__container__input{
+    font-family: 'Josefin Sans', sans-serif;
+    width: 100%;
+    border: none;
+    outline: none;
+    padding: 0 .7rem;
+    font-size: 10px;
+    font-weight: 700;
+    color: var(--very-dark-grayish-blue);
+    letter-spacing: 1px;
+}
+
+/* <----------  MAIN  ----------> */
+
+.main{
+    transform: translateY(-30px);
+}
+
+.tasks__container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto;
+    width: 90%;
+    background-color: var(--very-light-gray);
+    border-radius: 5px;
+    box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.1);
+}
+
+.task{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    padding: 1rem;
+    border-bottom: 1px solid var(--very-light-grayish-blue);
+}
+
+.tasks__container__task{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
+
+.tasks__container__task__circle{
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    border: 1px solid var(--light-grayish-blue);
+    cursor: pointer;
+}
+
+.tasks__container__task__text{
+    width: 100%;
+    padding: 0 1rem;
+    font-size: .8rem;
+    font-weight: 700;
+    color: var(--dark-grayish-blue-Dark);
+}
+
+.tasks__container__task__delete{
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    outline: none;
+    width: 14px;
+    filter: invert(1) sepia(0) saturate(0) hue-rotate(0deg) brightness(1) contrast(1);
+
+}
+
+.footer__section{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    padding: 1.1rem;
+    border-top: 1px solid var(--very-light-grayish-blue);
+    box-shadow: rgba(0, 0, 0, 0.4) 0px 60px 40px -7px;
+}
+
+.counterTasks{
+    font-size: .8rem;
+    font-weight: 700;
+    color: var(--dark-grayish-blue);
+}
+.clear__tasks{
+    font-family: 'Josefin Sans', sans-serif;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    outline: none;
+    font-size: .8rem;
+    font-weight: 700;
+    color: var(--dark-grayish-blue);
+}
+
+.footer__main{
+    background-color: var(--very-light-gray);
+    border-radius: 5px;
+    transform: translateY(20px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 90%;
+    margin: 0 auto;
+    padding: 1rem;
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 40px 20px -7px;
+}
+
+.footer__main__btn{
+    font-family: 'Josefin Sans', sans-serif;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    font-size: 1rem;
+    font-weight: 700;
+    color: var(--dark-grayish-blue);
+}
+
+.instruction{
+    font-size: 1rem;
+    font-weight: 700;
+    color: var(--dark-grayish-blue);
+    text-align: center;
+    margin: 3rem 0;
+}
+
+
+/* <----------  FOOTER  ----------> */
+
+.body__footer{
+    background-color            : darkgray;
+    height                      : 50px;
+    display                     : flex;
+    justify-content             : center;
+    align-items                 : center;
+    box-shadow                  : rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+    max-width                   : 80%;
+    margin                      : 20px auto;
+}
+
+.body__ > .attribution > p{
+    margin-bottom               : 5px;
+}
+
+.attribution {
+    font-family: 'Josefin Sans', sans-serif;
+    font-weight                 : 700;
+    font-size                   : 13px;
+    text-align                  : center;
+}
+
+.attribution a {
+    color                       : hsl(228, 45%, 44%);
+}
+
