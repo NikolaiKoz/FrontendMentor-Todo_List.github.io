@@ -38,8 +38,15 @@ body {
 
 /* <----------  HEADER  ----------> */
 
-header{
+.header{
     position: relative;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.header__img{
+    width: 100%;
+    max-height: 200px;
 }
 
 .title__container {
@@ -115,6 +122,8 @@ header{
 
 .main{
     transform: translateY(-30px);
+    max-width: 600px;
+    margin: 0 auto;
 }
 
 .tasks__container{
