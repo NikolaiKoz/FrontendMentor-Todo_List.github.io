@@ -7,6 +7,8 @@ const recibeTask = () => {
     taskList.push(taskInput.value);
     generatedList(taskList);
     taskInput.value = "";
+    deleteTask(taskList);
+    counterTasks();
   });
 
 };
@@ -28,15 +30,24 @@ const generatedList = (taskList) => {
   taskContainer.insertAdjacentHTML("afterbegin", lastTask);
 };
 
-const deleteTask = () => {
-    let TasksElements = document.querySelectorAll(".task");
-    TasksElements.forEach( taskElement => {
-        taskElement.addEventListener("click", (task) => {
-            console.log(task.target.parentElement.parentElement);
-            task.target.parentElement.parentElement.remove();
+const deleteTask = (taskList) => {
+   const deleteTask = document.querySelectorAll(".tasks__container__task__delete");
+    deleteTask.forEach((task, index) => {
+        task.addEventListener("click", () => {
+            taskList.splice(index, 1);
+            task.parentNode.parentNode.remove();
+            counterTasks();
         });
-    });
+    }
+    );
 };
 
+const counterTasks = () => {
+    const counter = document.getElementById("counterTasks");
+    counter.innerHTML = `${document.querySelectorAll(".task").length} items left`;
+};
+
+
+
 recibeTask();
-deleteTask();
+counterTasks();
