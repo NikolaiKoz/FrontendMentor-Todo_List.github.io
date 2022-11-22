@@ -28,4 +28,15 @@ const generatedList = (taskList) => {
   taskContainer.insertAdjacentHTML("afterbegin", lastTask);
 };
 
+const deleteTask = () => {
+    let TasksElements = document.querySelectorAll(".task");
+    TasksElements.forEach( taskElement => {
+        taskElement.addEventListener("click", (task) => {
+            console.log(task.target.parentElement.parentElement);
+            task.target.parentElement.parentElement.remove();
+        });
+    });
+};
+
 recibeTask();
+deleteTask();
