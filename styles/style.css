@@ -190,7 +190,7 @@ body {
     padding: 0 1rem;
     font-size: .8rem;
     font-weight: 700;
-    color: var(--dark-grayish-blue-Dark);
+    color: var(--check-text);
 }
 
 .tasks__container__task__delete{
@@ -258,6 +258,25 @@ body {
     color: var(--dark-grayish-blue);
     text-align: center;
     margin: 3rem 0;
+}
+
+.checkSvg{
+    width: 8px;
+    height: 8px;
+    margin-left: 5px;
+}
+
+.check{
+    background: var(--check-background);
+}
+
+.checkText{
+    color: var(--light-grayish-blue-Dark);
+    text-decoration: line-through;
+}
+
+.select{
+    color: var(--bright-blue);
 }
 
 

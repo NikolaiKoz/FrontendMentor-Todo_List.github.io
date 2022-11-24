@@ -9,6 +9,7 @@ const recibeTask = () => {
     taskInput.value = "";
     deleteTask(taskList);
     counterTasks();
+    clearCompleted();
   });
 
 };
@@ -18,7 +19,9 @@ const generatedList = (taskList) => {
   let lastTask = `
                 <article class="task">
                     <div class="tasks__container__task">
-                        <span class="tasks__container__task__circle"></span>
+                        <span class="tasks__container__task__circle">
+                            <img src="./images/icon-check.svg" alt="Check" class="checkSvg">
+                        </span>
                         <p class="tasks__container__task__text">${taskList[taskList.length - 1]}
                         </p>
                     </div>
@@ -27,7 +30,8 @@ const generatedList = (taskList) => {
                     </picture>
                 </article>
                 `;
-  taskContainer.insertAdjacentHTML("afterbegin", lastTask);
+    taskContainer.insertAdjacentHTML("afterbegin", lastTask);
+    checked();
 };
 
 const deleteTask = (taskList) => {
@@ -47,7 +51,43 @@ const counterTasks = () => {
     counter.innerHTML = `${document.querySelectorAll(".task").length} items left`;
 };
 
+const checked = () => {
+    const check = document.querySelectorAll(".tasks__container__task__circle");
+    check.forEach((task) => {
+        task.addEventListener("click", () => {
+            task.parentElement.classList.toggle("checkText");
+            task.classList.toggle("check");
+        });
+    });
+};
+
+const clearCompleted = () => {
+    const clearCompleted = document.getElementById("clearAllTasks");
+    clearCompleted.addEventListener("click", () => {
+        const completedTasks = document.querySelectorAll(".check");
+        completedTasks.forEach((task) => {
+            task.parentElement.parentElement.remove();
+            counterTasks();
+        }
+        );
+
+    });
+};
 
 
 recibeTask();
 counterTasks();
+checked();
+clearCompleted();
+
+/*
+PENDIENTES:
+- Boton Actives
+- Boton Completed
+- Hoover en los botones
+- Ocultar el boton Clear/delete, mostrarlas con el hover
+- Hoover btn Clear/delete
+- Hover en las tareas
+- Drag and Drop
+- Dark Side
+*/

@@ -44,7 +44,21 @@
 
       <article class="task">
         <div class="tasks__container__task">
-          <span class="tasks__container__task__circle"></span>
+          <span class="tasks__container__task__circle check">
+            <img src="./images/icon-check.svg" alt="Check" class="checkSvg">
+          </span>
+          <p class="tasks__container__task__text checkText">Go to the gymasdasd</p>
+        </div>
+        <picture>
+          <img class="tasks__container__task__delete" src="./images/icon-cross.svg" alt="Icon Cross">
+        </picture>
+      </article>
+
+      <article class="task">
+        <div class="tasks__container__task">
+          <span class="tasks__container__task__circle">
+            <img src="./images/icon-check.svg" alt="Check" class="checkSvg">
+          </span>
           <p class="tasks__container__task__text">Go to the gym</p>
         </div>
         <picture>
@@ -54,17 +68,9 @@
 
       <article class="task">
         <div class="tasks__container__task">
-          <span class="tasks__container__task__circle"></span>
-          <p class="tasks__container__task__text">Go to the gym</p>
-        </div>
-        <picture>
-          <img class="tasks__container__task__delete" src="./images/icon-cross.svg" alt="Icon Cross">
-        </picture>
-      </article>
-
-      <article class="task">
-        <div class="tasks__container__task">
-          <span class="tasks__container__task__circle"></span>
+          <span class="tasks__container__task__circle">
+            <img src="./images/icon-check.svg" alt="Check" class="checkSvg">
+          </span>
           <p class="tasks__container__task__text">Go to the gym</p>
         </div>
         <picture>
@@ -74,13 +80,13 @@
 
       <footer class="footer__section">
         <span id="counterTasks" class="counterTasks">2 items left</span>
-        <button id="clear__tasks" class="clear__tasks">Clear Completed</button>
+        <button id="clearAllTasks" class="clear__tasks">Clear Completed</button>
       </footer>
     </section>
 
     <!-- FOOTER MAIN -->
     <footer class="footer__main">
-      <button class="footer__main__btn">All</button>
+      <button class="footer__main__btn select">All</button>
       <button class="footer__main__btn">Active</button>
       <button class="footer__main__btn">Completed</button>
     </footer>
