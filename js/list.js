@@ -19,19 +19,21 @@ const generatedList = (taskList) => {
   let lastTask = `
                 <article class="task">
                     <div class="tasks__container__task">
-                        <span class="tasks__container__task__circle">
+                        <span class="tasks__container__task__circle hide">
                             <img src="./images/icon-check.svg" alt="Check" class="checkSvg">
                         </span>
                         <p class="tasks__container__task__text">${taskList[taskList.length - 1]}
                         </p>
                     </div>
                     <picture>
-                        <img class="tasks__container__task__delete" src="./images/icon-cross.svg" alt="Icon Cross">
+                        <img class="tasks__container__task__delete hide" src="./images/icon-cross.svg" alt="Icon Cross">
                     </picture>
                 </article>
                 `;
     taskContainer.insertAdjacentHTML("afterbegin", lastTask);
     checked();
+    hideDeletedAndChecks();
+
 };
 
 const deleteTask = (taskList) => {
@@ -125,6 +127,22 @@ const changeSelect = () => {
     );
 };
 
+const hideDeletedAndChecks = () => {
+    const task = document.querySelectorAll(".task");
+    task.forEach((task) => {
+        task.addEventListener("mouseover", () => {
+            task.childNodes[3].childNodes[1].classList.remove("hide");
+            task.childNodes[1].childNodes[1].classList.remove("hide");
+        }
+        );
+        task.addEventListener("mouseout", () => {
+            task.childNodes[3].childNodes[1].classList.add("hide");
+            task.childNodes[1].childNodes[1].classList.add("hide");
+        }
+        );
+    });
+};
+
 
 
 
@@ -137,13 +155,10 @@ activeTasks();
 completedTasks();
 allTasks();
 changeSelect();
+hideDeletedAndChecks();
 
 /*
 PENDIENTES:
-- Hoover en los botones
-- Ocultar el boton Clear/delete, mostrarlas con el hover
-- Hoover btn Clear/delete
-- Hover en las tareas
 - Drag and Drop
 - Dark Side
 */

@@ -185,6 +185,7 @@ body {
     cursor: pointer;
 }
 
+
 .tasks__container__task__text{
     width: 100%;
     padding: 0 1rem;
@@ -198,10 +199,10 @@ body {
     border: none;
     cursor: pointer;
     outline: none;
-    width: 14px;
-    filter: invert(1) sepia(0) saturate(0) hue-rotate(0deg) brightness(1) contrast(1);
-
+    width: 16px;
 }
+
+
 
 .footer__section{
     display: flex;
@@ -229,6 +230,11 @@ body {
     color: var(--dark-grayish-blue);
 }
 
+.counterTasks:hover,
+.clear__tasks:hover{
+    color: var(--very-dark-grayish-blue);
+}
+
 .footer__main{
     background-color: var(--very-light-gray);
     border-radius: 5px;
@@ -250,6 +256,10 @@ body {
     font-size: 1rem;
     font-weight: 700;
     color: var(--dark-grayish-blue);
+}
+
+.footer__main__btn:hover{
+    color: var(--very-dark-grayish-blue);
 }
 
 .instruction{
