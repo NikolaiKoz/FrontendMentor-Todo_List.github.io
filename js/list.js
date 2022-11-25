@@ -74,16 +74,64 @@ const clearCompleted = () => {
     });
 };
 
+const activeTasks = () => {
+    const activeTasks = document.getElementById("activeTasks");
+    activeTasks.addEventListener("click", () => {
+        const completedTasks = document.querySelectorAll(".task");
+        completedTasks.forEach((task) => {
+            if (task.childNodes[1].childNodes[1].classList.contains("check")) {
+                task.classList.add("hide");
+            } else {
+                task.classList.remove("hide");
+            }
+        });
+    });
+};
+
+const completedTasks = () => {
+    const completedTasks = document.getElementById("completedTasks");
+    completedTasks.addEventListener("click", () => {
+        const completedTasks = document.querySelectorAll(".task");
+        completedTasks.forEach((task) => {
+            if (!task.childNodes[1].childNodes[1].classList.contains("check")) {
+                task.classList.add("hide");
+            } else {
+                task.classList.remove("hide");
+            }
+        });
+    });
+};
+
+const allTasks = () => {
+    const allTasks = document.getElementById("allTasks");
+    allTasks.addEventListener("click", () => {
+        const completedTasks = document.querySelectorAll(".task");
+        completedTasks.forEach((task) => {
+            task.classList.remove("hide");
+        });
+    });
+};
+
+const changeSelect = () => {
+    const select = document.querySelectorAll(".footer__main__btn");
+    console.log(select);
+};
+
+
+
+
 
 recibeTask();
 counterTasks();
 checked();
 clearCompleted();
+activeTasks();
+completedTasks();
+allTasks();
+changeSelect();
 
 /*
 PENDIENTES:
-- Boton Actives
-- Boton Completed
 - Hoover en los botones
 - Ocultar el boton Clear/delete, mostrarlas con el hover
 - Hoover btn Clear/delete
