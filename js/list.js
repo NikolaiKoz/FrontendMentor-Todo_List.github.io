@@ -114,7 +114,15 @@ const allTasks = () => {
 
 const changeSelect = () => {
     const select = document.querySelectorAll(".footer__main__btn");
-    console.log(select);
+    select.forEach((task) => {
+        task.addEventListener("click", () => {
+            select.forEach((task) => {
+                task.classList.remove("select");
+            });
+            task.classList.add("select");
+        });
+    }
+    );
 };
 
 
