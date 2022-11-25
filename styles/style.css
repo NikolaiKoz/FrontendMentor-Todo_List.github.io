@@ -72,6 +72,7 @@ body {
 }
 
 
+
 .title__container {
     display: flex;
     justify-content: space-between;
@@ -321,3 +322,13 @@ body {
     color                       : hsl(228, 45%, 44%);
 }
 
+
+/* <----------  Dark Colors ----------> */
+
+.bodyDark {
+    background-color: var(--very-dark-blue-Dark);
+}
+
+.input__container__inputDark{
+    background-color: var(--very-dark-desaturated-blue-Dark);
+}

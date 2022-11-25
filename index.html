@@ -16,23 +16,23 @@
 <body>
 
   <picture>
-    <img class="deskotp__imgBg" src="./images/bg-desktop-light.jpg" alt="Backgorund desktop ligth">
+    <img id="desktopImg" class="deskotp__imgBg" src="./images/bg-desktop-light.jpg" alt="Backgorund desktop ligth">
   </picture>
 
   <header class="header">
     <!-- IMAGE HEADER -->
     <picture>
-      <img class="header__img" src="./images/bg-mobile-light.jpg" alt="Backgorund mobile ligth">
+      <img id="mobileImg" class="header__img" src="./images/bg-mobile-light.jpg" alt="Backgorund mobile ligth">
     </picture>
     <!-- TITLE AND BUTTON THEME -->
     <div class="title__container">
       <h1 class="title__container__title">TODO</h1>
       <picture>
-        <img class="title__container__themeBotton" src="./images/icon-moon.svg" alt="Icon Moon - DarkSide">
+        <img class="title__container__themeBotton" id="darkSide" src="./images/icon-moon.svg" alt="Icon Moon - DarkSide">
       </picture>
     </div>
     <!-- INPUT TEXT -->
-    <section class="input__container">
+    <section id="inputContainer" class="input__container">
       <span id="addTask" class="input__container__circle"></span>
       <input id="taskInput" class="input__container__input" type="text" placeholder="Create a new todo...">
     </section>
@@ -44,19 +44,19 @@
 
       <article class="task">
         <div class="tasks__container__task">
-          <span class="tasks__container__task__circle hide check">
+          <span class="tasks__container__task__circle check">
             <img src="./images/icon-check.svg" alt="Check" class="checkSvg">
           </span>
           <p class="tasks__container__task__text checkText">Go to the gymasdasd</p>
         </div>
         <picture>
-          <img class="tasks__container__task__delete hide" src="./images/icon-cross.svg" alt="Icon Cross">
+          <img class="tasks__container__task__delete" src="./images/icon-cross.svg" alt="Icon Cross">
         </picture>
       </article>
 
       <article class="task">
         <div class="tasks__container__task">
-          <span class="tasks__container__task__circle hide">
+          <span class="tasks__container__task__circle">
             <img src="./images/icon-check.svg" alt="Check" class="checkSvg">
           </span>
           <p class="tasks__container__task__text">Go to the gym</p>
@@ -68,7 +68,7 @@
 
       <article class="task">
         <div class="tasks__container__task">
-          <span class="tasks__container__task__circle hide">
+          <span class="tasks__container__task__circle">
             <img src="./images/icon-check.svg" alt="Check" class="checkSvg">
           </span>
           <p class="tasks__container__task__text">Go to the gym</p>
@@ -78,7 +78,7 @@
         </picture>
       </article>
 
-      <footer class="footer__section">
+      <footer id="footerSection" class="footer__section">
         <span id="counterTasks" class="counterTasks">2 items left</span>
         <button id="clearAllTasks" class="clear__tasks">Clear Completed</button>
       </footer>
@@ -109,5 +109,6 @@
   </footer>
 
   <script src="./js/list.js"></script>
+  <script src="./js/darkSide.js"></script>
 </body>
 </html>

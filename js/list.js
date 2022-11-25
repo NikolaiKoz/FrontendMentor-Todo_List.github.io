@@ -132,12 +132,10 @@ const hideDeletedAndChecks = () => {
     task.forEach((task) => {
         task.addEventListener("mouseover", () => {
             task.childNodes[3].childNodes[1].classList.remove("hide");
-            task.childNodes[1].childNodes[1].classList.remove("hide");
         }
         );
         task.addEventListener("mouseout", () => {
             task.childNodes[3].childNodes[1].classList.add("hide");
-            task.childNodes[1].childNodes[1].classList.add("hide");
         }
         );
     });
