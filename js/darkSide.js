@@ -50,14 +50,17 @@ const bodyDarkColor = () => {
     const tasks = document.querySelectorAll(".task");
     tasks.forEach(task => {
         task.classList.toggle("input__container__inputDark");
+        task.classList.toggle("borderDark");
     }
     );
 
     const footerSection = document.getElementById("footerSection");
     footerSection.classList.toggle("input__container__inputDark");
+    footerSection.classList.toggle("bordertopDark");
 
     const footerMain = document.getElementById("footerMain");
     footerMain.classList.toggle("input__container__inputDark");
+
 };
 
 

@@ -124,6 +124,11 @@ body {
 
 }
 
+.imgPaloma{
+    margin-left: 3px;
+    cursor: pointer;
+}
+
 ::-webkit-input-placeholder {
     font-family: 'Josefin Sans', sans-serif;
     color: var(--dark-grayish-blue);
@@ -331,4 +336,12 @@ body {
 
 .input__container__inputDark{
     background-color: var(--very-dark-desaturated-blue-Dark);
+}
+
+.borderDark{
+    border-bottom: 1px solid var(--very-dark-grayish-blue-Dark);
+}
+
+.bordertopDark{
+    border-top: 1px solid var(--very-dark-grayish-blue-Dark);
 }

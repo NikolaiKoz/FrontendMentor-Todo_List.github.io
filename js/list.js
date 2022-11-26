@@ -19,8 +19,8 @@ const generatedList = (taskList) => {
   let lastTask = `
                 <article class="task">
                     <div class="tasks__container__task">
-                        <span class="tasks__container__task__circle hide">
-                            <img src="./images/icon-check.svg" alt="Check" class="checkSvg">
+                        <span class="tasks__container__task__circle">
+                            <img class="hide imgPaloma" src="./images/icon-check.svg" alt="Check" class="checkSvg">
                         </span>
                         <p class="tasks__container__task__text">${taskList[taskList.length - 1]}
                         </p>
@@ -57,6 +57,7 @@ const checked = () => {
     const check = document.querySelectorAll(".tasks__container__task__circle");
     check.forEach((task) => {
         task.addEventListener("click", () => {
+            task.childNodes[1].classList.toggle("hide");
             task.parentElement.classList.toggle("checkText");
             task.classList.toggle("check");
         });
