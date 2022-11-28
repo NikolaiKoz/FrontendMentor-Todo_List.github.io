@@ -158,6 +158,6 @@ hideDeletedAndChecks();
 
 /*
 PENDIENTES:
+- Dark Side - Faltan los colores del texto y la inversion al crear una nueva lista
 - Drag and Drop
-- Dark Side
 */
