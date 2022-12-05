@@ -51,6 +51,13 @@ const bodyDarkColor = () => {
     tasks.forEach(task => {
         task.classList.toggle("input__container__inputDark");
         task.classList.toggle("borderDark");
+        task.classList.toggle("tasks__letterDark");
+    }
+    );
+
+    const tasksChecked = document.querySelectorAll(".checkText");
+    tasksChecked.forEach(task => {
+        task.classList.toggle("checkText__Dark");
     }
     );
 

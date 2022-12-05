@@ -345,3 +345,12 @@ body {
 .bordertopDark{
     border-top: 1px solid var(--very-dark-grayish-blue-Dark);
 }
+
+.tasks__letterDark{
+    color: var(--light-grayish-blue-Dark);
+}
+
+.checkText__Dark{
+    color: var(--very-dark-grayish-blue-Dark);
+    text-decoration: line-through;
+}

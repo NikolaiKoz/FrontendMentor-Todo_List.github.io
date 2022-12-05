@@ -26,7 +26,7 @@ const generatedList = (taskList) => {
                         </p>
                     </div>
                     <picture>
-                        <img class="tasks__container__task__delete hide" src="./images/icon-cross.svg" alt="Icon Cross">
+                        <img class="tasks__container__task__delete" src="./images/icon-cross.svg" alt="Icon Cross">
                     </picture>
                 </article>
                 `;
