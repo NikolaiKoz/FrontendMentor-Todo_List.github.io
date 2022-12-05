@@ -16,7 +16,7 @@ const recibeTask = () => {
 
 const generatedList = (taskList) => {
   const taskContainer = document.getElementById("taskContainer");
-  let lastTask = `
+  const lastTask = `
                 <article class="task">
                     <div class="tasks__container__task">
                         <span class="tasks__container__task__circle">
@@ -60,6 +60,10 @@ const checked = () => {
             task.childNodes[1].classList.toggle("hide");
             task.parentElement.classList.toggle("checkText");
             task.classList.toggle("check");
+
+            console.log(task.childNodes[1]);
+            // console.log(task.parentElement.parentElement);
+            // console.log(task.parentElement.parentElement.childNodes[1].childNodes[1]);
         });
     });
 };
