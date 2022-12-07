@@ -7,7 +7,6 @@ const recibeTask = () => {
     taskList.push(taskInput.value);
     generatedList(taskList);
     taskInput.value = "";
-    deleteTask(taskList);
     counterTasks();
   });
 
@@ -30,55 +29,10 @@ const generatedList = (taskList) => {
                 </article>
                 `;
     taskContainer.insertAdjacentHTML("afterbegin", lastTask);
-    checked();
-    hideDeletedAndChecks();
 
 };
-
-const deleteTask = (taskList) => {
-   const deleteTask = document.querySelectorAll(".tasks__container__task__delete");
-    deleteTask.forEach((task, index) => {
-        task.addEventListener("click", () => {
-            taskList.splice(index, 1);
-            task.parentNode.parentNode.remove();
-            counterTasks();
-        });
-    }
-    );
-};
-
-const checked = () => {
-    const check = document.querySelectorAll(".tasks__container__task__circle");
-    check.forEach((task) => {
-        task.addEventListener("click", () => {
-            task.childNodes[1].classList.toggle("hide");
-            task.parentElement.classList.toggle("checkText");
-            task.classList.toggle("check");
-        });
-    });
-};
-
-const hideDeletedAndChecks = () => {
-    const task = document.querySelectorAll(".task");
-    task.forEach((task) => {
-        task.addEventListener("mouseover", () => {
-            task.childNodes[3].childNodes[1].classList.remove("hide");
-        }
-        );
-        task.addEventListener("mouseout", () => {
-            task.childNodes[3].childNodes[1].classList.add("hide");
-        }
-        );
-    });
-};
-
-
-
-
 
 recibeTask();
-checked();
-hideDeletedAndChecks();
 
 /*
 PENDIENTES:
