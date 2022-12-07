@@ -9,7 +9,6 @@ const recibeTask = () => {
     taskInput.value = "";
     deleteTask(taskList);
     counterTasks();
-    clearCompleted();
   });
 
 };
@@ -48,11 +47,6 @@ const deleteTask = (taskList) => {
     );
 };
 
-const counterTasks = () => {
-    const counter = document.getElementById("counterTasks");
-    counter.innerHTML = `${document.querySelectorAll(".task").length} items left`;
-};
-
 const checked = () => {
     const check = document.querySelectorAll(".tasks__container__task__circle");
     check.forEach((task) => {
@@ -61,19 +55,6 @@ const checked = () => {
             task.parentElement.classList.toggle("checkText");
             task.classList.toggle("check");
         });
-    });
-};
-
-const clearCompleted = () => {
-    const clearCompleted = document.getElementById("clearAllTasks");
-    clearCompleted.addEventListener("click", () => {
-        const completedTasks = document.querySelectorAll(".check");
-        completedTasks.forEach((task) => {
-            task.parentElement.parentElement.remove();
-            counterTasks();
-        }
-        );
-
     });
 };
 
@@ -96,9 +77,7 @@ const hideDeletedAndChecks = () => {
 
 
 recibeTask();
-counterTasks();
 checked();
-clearCompleted();
 hideDeletedAndChecks();
 
 /*
