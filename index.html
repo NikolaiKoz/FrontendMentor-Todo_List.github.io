@@ -40,19 +40,66 @@
 
   <main id="main" class="main">
     <!-- LIST OF TASKS -->
+
     <section id="taskContainer" class="tasks__container">
+
+      <article class="task">
+        <div class="tasks__container__task checkText">
+            <span class="tasks__container__task__circle check">
+                <img class="imgPaloma" src="./images/icon-check.svg" alt="Check" class="checkSvg">
+            </span>
+            <p class="tasks__container__task__text">${taskList[taskList.length - 1]}
+            </p>
+        </div>
+        <picture>
+            <img class="tasks__container__task__delete" src="./images/icon-cross.svg" alt="Icon Cross">
+        </picture>
+    </article>
+
+    <article class="task">
+      <div class="tasks__container__task">
+          <span class="tasks__container__task__circle">
+              <img class="hide imgPaloma" src="./images/icon-check.svg" alt="Check" class="checkSvg">
+          </span>
+          <p class="tasks__container__task__text">${taskList[taskList.length - 1]}
+          </p>
+      </div>
+      <picture>
+          <img class="tasks__container__task__delete" src="./images/icon-cross.svg" alt="Icon Cross">
+      </picture>
+  </article>
+
+  <article class="task">
+    <div class="tasks__container__task">
+        <span class="tasks__container__task__circle">
+            <img class="hide imgPaloma" src="./images/icon-check.svg" alt="Check" class="checkSvg">
+        </span>
+        <p class="tasks__container__task__text">${taskList[taskList.length - 1]}
+        </p>
+    </div>
+    <picture>
+        <img class="tasks__container__task__delete" src="./images/icon-cross.svg" alt="Icon Cross">
+    </picture>
+</article>
+
+
+
+
+
+
 
       <footer id="footerSection" class="footer__section">
         <span id="counterTasks" class="counterTasks">2 items left</span>
+        <div class="container" id="desktopContainer">
+          <!-- showOptions.js -->
+        </div>
         <button id="clearAllTasks" class="clear__tasks">Clear Completed</button>
       </footer>
     </section>
 
     <!-- FOOTER MAIN -->
-    <footer id="footerMain" class="footer__main">
-      <button id="allTasks" class="footer__main__btn select">All</button>
-      <button id="activeTasks" class="footer__main__btn">Active</button>
-      <button id="completedTasks" class="footer__main__btn">Completed</button>
+    <footer id="mobileContainer" class="footer__main">
+          <!-- showOptions.js -->
     </footer>
 
   </main>
@@ -74,5 +121,9 @@
 
   <script src="./js/list.js"></script>
   <script src="./js/darkSide.js"></script>
+  <script src="./js/showOptions.js"></script>
+  <script src="./js/allTasks.js"></script>
+  <script src="./js/activeTasks.js"></script>
+  <script src="./js/completedTasks.js"></script>
 </body>
 </html>

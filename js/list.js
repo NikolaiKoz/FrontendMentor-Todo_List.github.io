@@ -60,10 +60,6 @@ const checked = () => {
             task.childNodes[1].classList.toggle("hide");
             task.parentElement.classList.toggle("checkText");
             task.classList.toggle("check");
-
-            console.log(task.childNodes[1]);
-            // console.log(task.parentElement.parentElement);
-            // console.log(task.parentElement.parentElement.childNodes[1].childNodes[1]);
         });
     });
 };
@@ -79,57 +75,6 @@ const clearCompleted = () => {
         );
 
     });
-};
-
-const activeTasks = () => {
-    const activeTasks = document.getElementById("activeTasks");
-    activeTasks.addEventListener("click", () => {
-        const completedTasks = document.querySelectorAll(".task");
-        completedTasks.forEach((task) => {
-            if (task.childNodes[1].childNodes[1].classList.contains("check")) {
-                task.classList.add("hide");
-            } else {
-                task.classList.remove("hide");
-            }
-        });
-    });
-};
-
-const completedTasks = () => {
-    const completedTasks = document.getElementById("completedTasks");
-    completedTasks.addEventListener("click", () => {
-        const completedTasks = document.querySelectorAll(".task");
-        completedTasks.forEach((task) => {
-            if (!task.childNodes[1].childNodes[1].classList.contains("check")) {
-                task.classList.add("hide");
-            } else {
-                task.classList.remove("hide");
-            }
-        });
-    });
-};
-
-const allTasks = () => {
-    const allTasks = document.getElementById("allTasks");
-    allTasks.addEventListener("click", () => {
-        const completedTasks = document.querySelectorAll(".task");
-        completedTasks.forEach((task) => {
-            task.classList.remove("hide");
-        });
-    });
-};
-
-const changeSelect = () => {
-    const select = document.querySelectorAll(".footer__main__btn");
-    select.forEach((task) => {
-        task.addEventListener("click", () => {
-            select.forEach((task) => {
-                task.classList.remove("select");
-            });
-            task.classList.add("select");
-        });
-    }
-    );
 };
 
 const hideDeletedAndChecks = () => {
@@ -154,10 +99,6 @@ recibeTask();
 counterTasks();
 checked();
 clearCompleted();
-activeTasks();
-completedTasks();
-allTasks();
-changeSelect();
 hideDeletedAndChecks();
 
 /*
