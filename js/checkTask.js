@@ -12,8 +12,6 @@ const checkTask = () => {
                 task.parentElement.classList.toggle("checkText");
                 task.classList.toggle("check");
 
-                console.log(task.parentElement.childNodes[3].textContent);
-
                 const allTasks = JSON.parse(localStorage.getItem("tasks"));
 
                 allTasks.forEach((taskLS) => {
