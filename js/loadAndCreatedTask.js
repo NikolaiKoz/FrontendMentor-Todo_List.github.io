@@ -1,6 +1,13 @@
 const loadAndCreatedTask = () => {
 
-    const allTasks = [
+    let allTasks = [];
+
+    const checkLocalStorage = () => {
+        if (localStorage.getItem('tasks')) {
+            allTasks.push(...JSON.parse(localStorage.getItem('tasks')));
+        } else {
+
+            allTasks = [
         {
             checked: false,
             text: "Complete Todo App on Frontend Mentor"
@@ -26,10 +33,7 @@ const loadAndCreatedTask = () => {
             text: "Complete online JavaScript course"
         },
     ];
-
-    const checkLocalStorage = () => {
-        if (localStorage.getItem('tasks')) {
-            allTasks.push(...JSON.parse(localStorage.getItem('tasks')));
+        localStorage.setItem('tasks', JSON.stringify(allTasks));
         }
     };
     checkLocalStorage();
@@ -61,7 +65,31 @@ const loadAndCreatedTask = () => {
     };
     load();
 
+    const checkTask = () => {
 
+        allTasks.forEach((task) => {
+
+            if (task.checked) {
+
+                const tasksText = document.querySelectorAll('.tasks__container__task__text');
+
+                tasksText.forEach((taskText) => {
+
+                    if (taskText.textContent === task.text) {
+
+                        taskText.parentElement.classList.add("checkText")
+                        taskText.parentElement.childNodes[1].childNodes[1].classList.remove("hide")
+                        taskText.parentElement.childNodes[1].classList.add("check");
+
+                    }
+                }
+                );
+
+            }
+        });
+
+    };
+    checkTask();
 
 
 };
