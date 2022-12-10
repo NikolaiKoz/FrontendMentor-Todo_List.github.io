@@ -1,6 +1,31 @@
 const loadAndCreatedTask = () => {
 
-    const allTasks = [];
+    const allTasks = [
+        {
+            checked: false,
+            text: "Complete Todo App on Frontend Mentor"
+        },
+        {
+            checked: false,
+            text: "Pick up groceries"
+        },
+        {
+            checked: false,
+            text: "Read for 1 hour"
+        },
+        {
+            checked: false,
+            text: "10 minutes meditation"
+        },
+        {
+            checked: false,
+            text: "Jog around the park 3x"
+        },
+        {
+            checked: true,
+            text: "Complete online JavaScript course"
+        },
+    ];
 
     const checkLocalStorage = () => {
         if (localStorage.getItem('tasks')) {
@@ -17,9 +42,9 @@ const loadAndCreatedTask = () => {
 
             const taskCard =    `
                                             <article class="task">
-                                                <div class="tasks__container__task checkText">
-                                                    <span class="tasks__container__task__circle check">
-                                                        <img class="imgPaloma" src="./images/icon-check.svg" alt="Check" class="checkSvg">
+                                                <div class="tasks__container__task">
+                                                    <span class="tasks__container__task__circle">
+                                                        <img class="imgPaloma hide" src="./images/icon-check.svg" alt="Check" class="checkSvg">
                                                     </span>
                                                     <p class="tasks__container__task__text">${task.text}</p>
                                                 </div>
