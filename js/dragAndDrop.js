@@ -4,23 +4,37 @@ const dragAndDrop = () => {
 
     Sortable.create(taskContainer, {
         animation: 150,
-        ghostClass: 'blue-background-class'
-    });
+        ghostClass: 'blue-background-class',
 
-    const reorderTasksLocalStorage = () => {
+        onEnd: function () {
 
-        const tasks = document.querySelectorAll('.task');
+            const task = {
+                checked: false,
+                text: 'Task 1',
+            };
 
-        tasks.forEach((task) => {
-            task.addEventListener('dragleave', (e) => {
-                console.log(e);
+            const allTasks = [];
+
+            const taskList = document.querySelectorAll(".task");
+
+            taskList.forEach((taskList) => {
+
+                const taskText = taskList.querySelector(".tasks__container__task__text").innerText;
+                const taskChecked = taskList.querySelector(".tasks__container__task__circle").classList.contains("check");
+
+                const newTask = Object.create(task);
+
+                newTask.checked = taskChecked;
+                newTask.text = taskText;
+                allTasks.push(newTask);
+
             });
-        });
 
+            allTasks.reverse()
 
-
-    };
-    reorderTasksLocalStorage();
+            localStorage.setItem('tasks', JSON.stringify(allTasks));
+        }
+    });
 
 };
 dragAndDrop();
