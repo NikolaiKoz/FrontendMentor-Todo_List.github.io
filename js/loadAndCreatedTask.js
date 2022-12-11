@@ -89,18 +89,5 @@ const loadAndCreatedTask = () => {
 
     };
     checkTask();
-
-    const newTask = () => {
-
-        const addTask = document.getElementById('addTask');
-
-        addTask.addEventListener('click', () => {
-            checkLocalStorage();
-            load();
-        });
-
-    };
-    newTask();
-
 };
 loadAndCreatedTask();
