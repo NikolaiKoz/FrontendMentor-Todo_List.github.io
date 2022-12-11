@@ -7,5 +7,20 @@ const dragAndDrop = () => {
         ghostClass: 'blue-background-class'
     });
 
+    const reorderTasksLocalStorage = () => {
+
+        const tasks = document.querySelectorAll('.task');
+
+        tasks.forEach((task) => {
+            task.addEventListener('dragleave', (e) => {
+                console.log(e);
+            });
+        });
+
+
+
+    };
+    reorderTasksLocalStorage();
+
 };
 dragAndDrop();

@@ -16,8 +16,6 @@ const generatedOptions = () => {
         document.getElementById('mobileContainer').remove();
         desktopContainer.innerHTML += optionsToShow;
     }
+
 };
-
-
-
 generatedOptions();
