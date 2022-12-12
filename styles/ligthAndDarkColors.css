@@ -1,0 +1,16 @@
+/* <----------  LIGTH  ----------> */
+
+.bg-light{
+    background-color: var(--very-light-gray);
+}
+
+
+
+
+
+
+/* <----------  DARK  ----------> */
+
+.bg-dark{
+    background-color: var(--very-dark-blue-Dark);
+}

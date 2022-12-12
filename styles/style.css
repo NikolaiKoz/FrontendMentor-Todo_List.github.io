@@ -30,7 +30,6 @@
 /* <----------  BODY  ----------> */
 
 body {
-    background-color: var(--very-light-gray);
     line-height: 1;
     font-family: 'Josefin Sans', sans-serif;
     font-size: 18px;
@@ -70,8 +69,6 @@ body {
         transition: 0.5s;
     }
 }
-
-
 
 .title__container {
     display: flex;
