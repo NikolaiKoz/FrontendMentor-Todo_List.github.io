@@ -1,30 +1,39 @@
 const deleteTask = () => {
+  const taskContainer = document.getElementById("taskContainer");
 
-    const taskContainer = document.getElementById("taskContainer");
+  taskContainer.addEventListener("pointerover", () => {
+    const deleteTask = document.querySelectorAll(
+      ".tasks__container__task__delete"
+    );
 
-    taskContainer.addEventListener("pointerover", () => {
+    deleteTask.forEach((task) => {
+      task.addEventListener("click", () => {
+        const allTasksInDom = document.querySelectorAll(".task");
 
-        const deleteTask = document.querySelectorAll(".tasks__container__task__delete");
+        allTasksInDom.forEach((taskDom) => {
+          if (
+            taskDom.children[0].children[1].children[0].textContent ===
+            task.parentElement.parentElement.children[1].children[0].textContent
+          ) {
+            taskDom.remove();
+          }
+        });
 
-        deleteTask.forEach((task) => {
-            task.addEventListener("click", () => {
-                task.parentNode.parentNode.remove();
+        const allTasks = JSON.parse(localStorage.getItem("tasks"));
 
-                const allTasks = JSON.parse(localStorage.getItem("tasks"));
-
-                allTasks.forEach((taskLS) => {
-                     if (taskLS.text === task.parentNode.parentElement.childNodes[1].childNodes[3].textContent) {
-                         const index = allTasks.indexOf(taskLS);
-                         allTasks.splice(index, 1);
-                         localStorage.setItem("tasks", JSON.stringify(allTasks));
-                     }
-                 }
-                 );
-                counterTasks();
-            });
-        }
-        );
+        allTasks.forEach((taskLS) => {
+          if (
+            taskLS.text ===
+            task.parentElement.parentElement.children[1].children[0].textContent
+          ) {
+            const index = allTasks.indexOf(taskLS);
+            allTasks.splice(index, 1);
+            localStorage.setItem("tasks", JSON.stringify(allTasks));
+          }
+        });
+        counterTasks();
+      });
     });
-
+  });
 };
 deleteTask();

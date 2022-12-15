@@ -76,7 +76,6 @@ const loadAndCreatedTask = () => {
             );
             tasksInDom.children[0].children[1].classList.remove("text-light");
             tasksInDom.children[0].children[1].classList.add("checkText-light");
-            console.log(tasksInDom.children[0]);
           }
         });
       }
