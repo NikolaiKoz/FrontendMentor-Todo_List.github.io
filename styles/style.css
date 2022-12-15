@@ -170,7 +170,6 @@ body {
     align-items: center;
     width: 100%;
     padding: 1rem;
-    border-bottom: 1px solid var(--very-light-grayish-blue);
 }
 
 .tasks__container__task{
@@ -194,7 +193,6 @@ body {
     padding: 0 1rem;
     font-size: .8rem;
     font-weight: 700;
-    color: var(--check-text);
 }
 
 .tasks__container__task__delete{
@@ -213,7 +211,6 @@ body {
     align-items: center;
     width: 100%;
     padding: 1.1rem;
-    border-top: 1px solid var(--very-light-grayish-blue);
     box-shadow: rgba(0, 0, 0, 0.4) 0px 60px 40px -7px;
 }
 

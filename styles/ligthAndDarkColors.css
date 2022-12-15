@@ -4,7 +4,13 @@
     background-color: var(--very-light-gray);
 }
 
+.bt-light{
+    border-top: 1px solid var(--very-light-grayish-blue);
+}
 
+.bb-light{
+    border-bottom: 1px solid var(--very-light-grayish-blue);
+}
 
 
 
@@ -13,4 +19,16 @@
 
 .bg-dark{
     background-color: var(--very-dark-blue-Dark);
+}
+
+.bg-dark-input-and-tasks{
+    background-color: var(--very-dark-desaturated-blue-Dark);
+}
+
+.bt-dark{
+    border-top: 1px solid var(--very-dark-grayish-blue-Dark);
+}
+
+.bb-dark{
+    border-bottom: 1px solid var(--very-dark-grayish-blue-Dark);
 }
