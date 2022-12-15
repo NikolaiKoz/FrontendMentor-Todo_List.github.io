@@ -43,9 +43,13 @@ const bgColorsLigth = () => {
     document.getElementById("body").classList.remove("bg-dark");
     document.getElementById("body").classList.add("bg-light");
 
-    //MAIN TASK INPUT
+    //MAIN TASK INPUT CONTAINER
     document.getElementById("inputContainer").classList.remove("bg-dark-input-and-tasks");
     document.getElementById("inputContainer").classList.add("bg-light");
+
+    //TASK CONTAINER
+    document.getElementById("taskContainer").classList.remove("bg-dark-input-and-tasks");
+    document.getElementById("taskContainer").classList.add("bg-light");
 
     //TASK INPUT
     document.getElementById("taskInput").classList.remove("bg-dark-input-and-tasks");
@@ -58,6 +62,19 @@ const bgColorsLigth = () => {
         task.classList.remove("bb-dark");
         task.classList.add("bg-light");
         task.classList.add("mb-light");
+    });
+
+    //TASKS TEXT AND CHECK TEXT DARK
+    document.querySelectorAll(".tasks__container__task").forEach(taskText => {
+
+        if (taskText.classList.contains("checkText-dark")) {
+            taskText.classList.remove("checkText-dark");
+            taskText.classList.add("checkText-light");
+        } else {
+            taskText.classList.remove("text-dark");
+            taskText.classList.add("text-light");
+        }
+
     });
 
     //FOOTER SECTION
@@ -83,6 +100,10 @@ const bgColorsDark = () => {
     document.getElementById("inputContainer").classList.remove("bg-light");
     document.getElementById("inputContainer").classList.add("bg-dark-input-and-tasks");
 
+    //TASK CONTAINER
+    document.getElementById("taskContainer").classList.remove("bg-light");
+    document.getElementById("taskContainer").classList.add("bg-dark-input-and-tasks");
+
     //TASK INPUT
     document.getElementById("taskInput").classList.remove("bg-light");
     document.getElementById("taskInput").classList.add("bg-dark-input-and-tasks");
@@ -94,6 +115,19 @@ const bgColorsDark = () => {
         task.classList.remove("bb-light");
         task.classList.add("bg-dark-input-and-tasks");
         task.classList.add("bb-dark");
+    });
+
+    //TASKS TEXT AND CHECK TEXT DARK
+    document.querySelectorAll(".tasks__container__task").forEach(taskText => {
+
+        if (taskText.classList.contains("checkText-light")) {
+            taskText.classList.remove("checkText-light");
+            taskText.classList.add("checkText-dark");
+        } else {
+            taskText.classList.remove("text-light");
+            taskText.classList.add("text-dark");
+        }
+
     });
 
     //FOOTER SECTION

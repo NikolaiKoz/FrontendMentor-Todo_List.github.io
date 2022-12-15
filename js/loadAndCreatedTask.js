@@ -50,8 +50,9 @@ const loadAndCreatedTask = () => {
                                                     <span class="tasks__container__task__circle">
                                                         <img class="imgPaloma hide" src="./images/icon-check.svg" alt="Check" class="checkSvg">
                                                     </span>
+                                                    <div class="tasks__container__task text-light">
                                                     <p class="tasks__container__task__text">${task.text}</p>
-                                                </div>
+                                                    </div>
                                                 <picture>
                                                     <img class="tasks__container__task__delete" src="./images/icon-cross.svg" alt="Icon Cross">
                                                 </picture>
@@ -65,29 +66,6 @@ const loadAndCreatedTask = () => {
     };
     load();
 
-    const checkTask = () => {
-
-        allTasks.forEach((task) => {
-
-            if (task.checked) {
-
-                const tasksText = document.querySelectorAll('.tasks__container__task__text');
-
-                tasksText.forEach((taskText) => {
-
-                    if (taskText.textContent === task.text) {
-
-                        taskText.parentElement.classList.add("checkText")
-                        taskText.parentElement.childNodes[1].childNodes[1].classList.remove("hide")
-                        taskText.parentElement.childNodes[1].classList.add("check");
-
-                    }
-                }
-                );
-            }
-        });
-
-    };
-    checkTask();
+    //Verificar el estado de la task antes de cargar
 };
 loadAndCreatedTask();
