@@ -13,6 +13,8 @@ const checkTask = () => {
 
         const darkSideBtn = document.getElementById("darkSide");
 
+        console.log( task.parentElement.children[1]);
+
         if (darkSideBtn.src.includes("moon")) {
           task.parentElement.children[1].classList.toggle("text-light");
           task.parentElement.children[1].classList.toggle("checkText-light");
@@ -24,8 +26,6 @@ const checkTask = () => {
         const allTasks = JSON.parse(localStorage.getItem("tasks"));
 
         allTasks.forEach((taskLS) => {
-          console.log(taskLS.text);
-          console.log(task.parentElement.childNodes[3].children[0].textContent);
           if (
             taskLS.text ===
             task.parentElement.childNodes[3].children[0].textContent

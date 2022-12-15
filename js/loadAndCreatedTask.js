@@ -1,50 +1,46 @@
 const loadAndCreatedTask = () => {
+  let allTasks = [];
 
-    let allTasks = [];
-
-    const checkLocalStorage = () => {
-        if (localStorage.getItem('tasks')) {
-            allTasks.push(...JSON.parse(localStorage.getItem('tasks')));
-        } else {
-
-            allTasks = [
+  const checkLocalStorage = () => {
+    if (localStorage.getItem("tasks")) {
+      allTasks.push(...JSON.parse(localStorage.getItem("tasks")));
+    } else {
+      allTasks = [
         {
-            checked: false,
-            text: "Complete Todo App on Frontend Mentor"
+          checked: false,
+          text: "Complete Todo App on Frontend Mentor",
         },
         {
-            checked: false,
-            text: "Pick up groceries"
+          checked: false,
+          text: "Pick up groceries",
         },
         {
-            checked: false,
-            text: "Read for 1 hour"
+          checked: false,
+          text: "Read for 1 hour",
         },
         {
-            checked: false,
-            text: "10 minutes meditation"
+          checked: false,
+          text: "10 minutes meditation",
         },
         {
-            checked: false,
-            text: "Jog around the park 3x"
+          checked: false,
+          text: "Jog around the park 3x",
         },
         {
-            checked: true,
-            text: "Complete online JavaScript course"
+          checked: true,
+          text: "Complete online JavaScript course",
         },
-    ];
-        localStorage.setItem('tasks', JSON.stringify(allTasks));
-        }
-    };
-    checkLocalStorage();
+      ];
+      localStorage.setItem("tasks", JSON.stringify(allTasks));
+    }
+  };
+  checkLocalStorage();
 
-    const load = () => {
+  const load = () => {
+    const taskContainer = document.getElementById("taskContainer");
 
-        const taskContainer = document.getElementById('taskContainer');
-
-        allTasks.forEach((task) => {
-
-            const taskCard =    `
+    allTasks.forEach((task) => {
+      const taskCard = `
                                             <article class="task mb-light">
                                                 <div class="tasks__container__task">
                                                     <span class="tasks__container__task__circle">
@@ -59,13 +55,33 @@ const loadAndCreatedTask = () => {
                                             </article>
                             `;
 
-        taskContainer.insertAdjacentHTML('afterbegin', taskCard);
+      taskContainer.insertAdjacentHTML("afterbegin", taskCard);
+    });
+  };
+  load();
 
+  const checkTask = () => {
+    allTasks.forEach((task) => {
+      if (task.checked) {
+        const renderTasks = document.querySelectorAll(".task");
 
+        renderTasks.forEach((tasksInDom) => {
+          if (
+            tasksInDom.children[0].children[1].children[0].textContent ===
+            task.text
+          ) {
+            tasksInDom.children[0].children[0].classList.add("check");
+            tasksInDom.children[0].children[0].children[0].classList.remove(
+              "hide"
+            );
+            tasksInDom.children[0].children[1].classList.remove("text-light");
+            tasksInDom.children[0].children[1].classList.add("checkText-light");
+            console.log(tasksInDom.children[0]);
+          }
         });
-    };
-    load();
-
-    //Verificar el estado de la task antes de cargar
+      }
+    });
+  };
+  checkTask();
 };
 loadAndCreatedTask();
