@@ -15,9 +15,6 @@ const generatedOptions = () => {
     desktopContainer.innerHTML += optionsToShow;
   }
 
-  console.log(mobileContainer.childElementCount);
-
-  //Crear un lisener en la ventana para que cada vez que se cambie de tamaño se vuelva a ejecutar la funcion
   window.addEventListener("resize", () => {
     if (window.innerWidth > 768 && desktopContainer.childElementCount === 0 && mobileContainer.childElementCount === 3) {
       window.location.reload();

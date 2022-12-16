@@ -143,11 +143,13 @@ const bgColorsDark = () => {
   document.getElementById("footerSection").classList.add("bt-dark");
 
   //MOBILE CONTAINER
-  document.getElementById("mobileContainer").classList.remove("bg-light");
-  document
-    .getElementById("mobileContainer")
-    .classList.add("bg-dark-input-and-tasks");
-};
+  if(window.innerWidth < 768){
+      document.getElementById("mobileContainer").classList.remove("bg-light");
+      document
+        .getElementById("mobileContainer")
+        .classList.add("bg-dark-input-and-tasks");
+    };
+  }
 
 const remmemberDarkSide = () => {
   const remmemberDarkSide = {
