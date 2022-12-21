@@ -43,8 +43,8 @@ const addNewTask = () => {
     }
 
     taskContainer.insertAdjacentHTML("afterbegin", taskCard);
-
     counterTasks();
+    checkLocalStorage();
   };
 
   addTaskBtn.addEventListener("click", () => {

@@ -4,7 +4,6 @@ const saveAndCheckLocalStorage = () => {
         checked: false,
         text: 'Task 1',
     };
-
     const allTasks = [];
 
     const inputTask = document.getElementById('taskInput');
@@ -35,5 +34,6 @@ const saveAndCheckLocalStorage = () => {
             save();
         }
     });
+
 };
 saveAndCheckLocalStorage();

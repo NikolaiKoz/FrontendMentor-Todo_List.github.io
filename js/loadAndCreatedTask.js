@@ -41,7 +41,7 @@ const loadAndCreatedTask = () => {
 
     allTasks.forEach((task) => {
       const taskCard = `
-                                            <article class="task mb-light">
+                                            <article class="task bb-light">
                                                 <div class="tasks__container__task">
                                                     <span class="tasks__container__task__circle">
                                                         <img class="imgPaloma hide" src="./images/icon-check.svg" alt="Check" class="checkSvg">
